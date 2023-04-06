@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000",
+    baseUrl: "https://mern-car-rental-backend-49jgiu48k-gedeonagmas.vercel.app",
   }),
   tagTypes: ["get-all-cars", "get-all-users", "get-history"],
   endpoints: (builder) => ({
