@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "dev": "set NODE.ENV='development' && nodemon ./server.js",
-    "pro": "set NODE.ENV='production' && nodemon ./server.js",
+    "dev": "set NODE.ENV='development' && nodemon ./index.js",
+    "pro": "set NODE.ENV='production' && nodemon ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
