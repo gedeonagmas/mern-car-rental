@@ -13,10 +13,7 @@ exports.signup = async (req, res, next) => {
     email,
     address,
     phone,
-    profilePic:
-      req.files.profilePic === undefined
-        ? undefined
-        : req.files.profilePic[0]?.path,
+    profilePic: req.files.profilePic === undefined ? undefined : req.files.profilePic[0]?.path,
     password,
   });
   return res.status(200).json({ message: "account created successfully" });
