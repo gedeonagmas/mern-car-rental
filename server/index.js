@@ -8,7 +8,7 @@ const app = express();
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-app.use(cors({ origin: "https://mern-car-rental-backend-49jgiu48k-gedeonagmas.vercel.app" }));
+app.use(cors({ origin: "https://mern-car-rental-backend.onrender.com" }));
 app.use(express.json());
 app.use("/user", userRouter);
 
