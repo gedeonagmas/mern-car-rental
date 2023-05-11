@@ -91,7 +91,7 @@ const Signup = () => {
           Register
         </button>
         {registerResponse.status === "pending" && (
-          <div className="text-lg font-bold text-emerald-500 shadow-xl shadow-emerald-400"></div>
+          <div className="text-lg font-bold text-emerald-500 shadow-xl shadow-emerald-400">Loading...</div>
         )}
       </div>
       {registerResponse?.data?.message && (
