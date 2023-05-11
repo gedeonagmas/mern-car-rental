@@ -92,7 +92,7 @@ const Signup = () => {
         </button>
         {registerResponse.status === "pending" && (
           <div className="h-auto rounded-full absolute bottom-2 w-[100%] bg-white py-2 px-2 z-20">
-            <img src="./loading.gif" alt="Loading" className="h-32 w-32 rounded-full" />
+            <img src="./loading.gif" alt="Loading..." className="h-32 w-32 rounded-full" />
           </div>
         )}
       </div>
