@@ -25,11 +25,13 @@ const Signup = () => {
     form.append("profilePic", profilePic);
     registerData(form);
   };
-
+  registerResponse && console.log(registerResponse, "rrrrrr");
   return (
     <div className="flex h-[90vh] w-[100%] items-center justify-center">
       <div className="flex relative flex-col mt-52 items-center justify-center bg-white w-[90%] sm:w-[80%] md:w-[60%] lg:w-[50%] h-[90%]">
-        <p className="text-3xl font-extrabold flex items-center justify-center text-gray-500 py-5 px-4 w-[90%] uppercase">Your Personnel Information</p>
+        <p className="text-3xl font-extrabold flex items-center justify-center text-gray-500 py-5 px-4 w-[90%] uppercase">
+          Your Personnel Information
+        </p>
         <input
           onChange={(e) => setFirstName(e.target.value)}
           className="h-16 text-lg font-bold mt-6 w-[90%] px-2 py-1 border border-gray-400 focus:outline-gray-500"
@@ -42,8 +44,18 @@ const Signup = () => {
           type="text"
           placeholder="last name"
         />
-        <input onChange={(e) => setEmail(e.target.value)} className="h-16 text-lg font-bold mt-2 w-[90%] px-2 py-1 border border-gray-400 focus:outline-gray-500" type="text" placeholder="email" />
-        <input onChange={(e) => setAddress(e.target.value)} className="h-16 text-lg font-bold mt-2 w-[90%] px-2 py-1 border border-gray-400 focus:outline-gray-500" type="text" placeholder="address" />
+        <input
+          onChange={(e) => setEmail(e.target.value)}
+          className="h-16 text-lg font-bold mt-2 w-[90%] px-2 py-1 border border-gray-400 focus:outline-gray-500"
+          type="text"
+          placeholder="email"
+        />
+        <input
+          onChange={(e) => setAddress(e.target.value)}
+          className="h-16 text-lg font-bold mt-2 w-[90%] px-2 py-1 border border-gray-400 focus:outline-gray-500"
+          type="text"
+          placeholder="address"
+        />
         <input
           onChange={(e) => setPhone(e.target.value)}
           className="h-16 text-lg font-bold mt-2 w-[90%] px-2 py-1 border border-gray-400 focus:outline-gray-500"
@@ -72,7 +84,10 @@ const Signup = () => {
           name="profilePic"
           id=""
         />
-        <button onClick={submit} className="h-14 rounded-sm text-xl hover:text-gray-200 mt-3 w-[90%] px-6 bg-[#ff4d30] text-white font-extrabold">
+        <button
+          onClick={submit}
+          className="h-14 rounded-sm text-xl hover:text-gray-200 mt-3 w-[90%] px-6 bg-[#ff4d30] text-white font-extrabold"
+        >
           Register
         </button>
       </div>
@@ -83,9 +98,13 @@ const Signup = () => {
       )}
       {registerResponse?.status === "rejected" && (
         <div className="absolute shadow-xl shadow-[#ff4d30] z-30 top-72 right-10 border bg-white px-2 py-2 h-auto w-auto border-[#ff4d30] text-[#ff4d30] font-bold text-lg">
-          {registerResponse.error?.data.map((e) => {
-            return <p className="">{e.msg}</p>;
-          })}
+          {registerResponse.error !== undefined ? (
+            registerResponse.error?.data.map((e) => {
+              return <p>{e.msg}</p>;
+            })
+          ) : (
+            <p>something went wrong</p>
+          )}
         </div>
       )}
     </div>
