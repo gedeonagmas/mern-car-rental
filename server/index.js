@@ -8,7 +8,8 @@ const app = express();
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-app.use(cors({ origin: "https://car-rental-system-mern-stack.vercel.app" }));
+// app.use(cors({ origin: "https://car-rental-system-mern-stack.vercel.app" }));
+app.use(cors({ origin: "http://localhost:4000" }));
 app.use(express.json());
 app.use("/user", userRouter);
 
