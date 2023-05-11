@@ -91,8 +91,8 @@ const Signup = () => {
           Register
         </button>
         {registerResponse.status === "pending" && (
-          <div className="w-auto h-auto absolute bottom-10 z-20">
-            <img src="./loading.gif" alt="Loading" className="h-10 w-10 rounded-full" />
+          <div className="w-auto h-auto absolute bottom-10 w-[100%] bg-white py-2 px-2 z-20">
+            <img src="./loading.gif" alt="Loading" className="h-20 w-20 rounded-full" />
           </div>
         )}
       </div>
