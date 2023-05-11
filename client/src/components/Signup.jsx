@@ -91,7 +91,9 @@ const Signup = () => {
           Register
         </button>
         {registerResponse.status === "pending" && (
-          <div className="text-lg font-bold text-emerald-500 shadow-xl shadow-emerald-400">Loading...</div>
+          <div className="w-auto h-auto absolute bottom-10 z-20">
+            <img src="./loading.gif" alt="Loading" className="h-10 w-10 rounded-full" />
+          </div>
         )}
       </div>
       {registerResponse?.data?.message && (
